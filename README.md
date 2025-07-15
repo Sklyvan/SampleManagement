@@ -122,6 +122,7 @@ Then, you can build and run the Docker container:
 * Create a real database of users instead of a hardcoded dictionary
 * Use PostgreSQL instead of SQLite for production (or MySQL if preferred)
 * Create a Docker Ignore file to exclude unnecessary files
+* Use `slowapi` to limit the number of requests
 
 ---
 
