@@ -67,7 +67,7 @@ Then, you can build and run the Docker container:
 
 ```bash
     docker build -t sample-management .
-    docker run --env-file .env -p 8000:8000 sample-management
+    docker run -p 8000:8000 --env-file .env -v "$(pwd)/test.db:/app/test.db" sample-management
 ```
 
 ---
