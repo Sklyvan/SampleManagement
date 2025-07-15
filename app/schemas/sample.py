@@ -1,4 +1,5 @@
 from datetime import date
+from typing import Optional
 
 from pydantic import BaseModel
 
@@ -16,3 +17,10 @@ class SampleRead(SampleCreate):
 
     class Config:
         from_attributes = True
+
+class SampleUpdate(BaseModel):
+    sample_type: Optional[SampleType]
+    subject_id: Optional[str]
+    collection_date: Optional[date]
+    status: Optional[StatusType]
+    storage_location: Optional[str]
