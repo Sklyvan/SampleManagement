@@ -178,8 +178,6 @@ The response will include an `access_token` field. Use this token in the `Author
     export TOKEN="your_jwt_token_here"
 ```
 
----
-
 ### 2. Create a Sample
 
 ```bash
@@ -189,8 +187,6 @@ The response will include an `access_token` field. Use this token in the `Author
          -d '{"sample_id": "S123", "sample_type": "blood", "status": "collected", ...}'
 ```
 
----
-
 ### 3. Get a Sample by ID
 
 ```bash
@@ -198,16 +194,12 @@ The response will include an `access_token` field. Use this token in the `Author
          -H "Authorization: Bearer $TOKEN"
 ```
 
----
-
 ### 4. List Samples (with optional filters)
 
 ```bash
     curl -X GET "http://localhost:8000/samples?sample_status=collected&sample_type=blood" \
          -H "Authorization: Bearer $TOKEN"
 ```
-
----
 
 ### 5. Update a Sample
 
@@ -218,16 +210,12 @@ The response will include an `access_token` field. Use this token in the `Author
          -d '{"status": "archived"}'
 ```
 
----
-
 ### 6. Delete a Sample
 
 ```bash
     curl -X DELETE "http://localhost:8000/samples/S123" \
          -H "Authorization: Bearer $TOKEN"
 ```
-
----
 
 > [!TIP]
 > You can "play" with all endpoints and see example requests/responses at [localhost:8000/docs](http://localhost:8000/docs).
