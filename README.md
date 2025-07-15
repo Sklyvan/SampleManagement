@@ -54,9 +54,17 @@ The application can be found at [localhost:8000](http://localhost:8000) with the
 
 ### 🐳 With Docker
 
+We need to initialize the database before running the Docker container. You can do this by running the following command:
+
+```bash
+    alembic upgrade head
+```
+
+Then, you can build and run the Docker container:
+
 ```bash
     docker build -t sample-management .
-    docker run -p 8000:8000 sample-management
+    docker run --env-file .env -p 8000:8000 sample-management
 ```
 
 ---
@@ -162,7 +170,7 @@ You can interactively explore and test all endpoints using the built-in OpenAPI 
 
 Below are example `curl` commands for authenticating and using the JWT token with each API endpoint.
 
-### 1. Obtain a JWT Token
+### Obtain a JWT Token 🔑
 
 Replace `<username>` and `<password>` with valid credentials.
 
@@ -178,7 +186,7 @@ The response will include an `access_token` field. Use this token in the `Author
     export TOKEN="your_jwt_token_here"
 ```
 
-### 2. Create a Sample
+### Create a Sample
 
 ```bash
     curl -X POST "http://localhost:8000/samples" \
@@ -187,21 +195,21 @@ The response will include an `access_token` field. Use this token in the `Author
          -d '{"sample_id": "S123", "sample_type": "blood", "status": "collected", ...}'
 ```
 
-### 3. Get a Sample by ID
+### Get a Sample by ID
 
 ```bash
     curl -X GET "http://localhost:8000/samples/S123" \
          -H "Authorization: Bearer $TOKEN"
 ```
 
-### 4. List Samples (with optional filters)
+### List Samples (with optional filters)
 
 ```bash
     curl -X GET "http://localhost:8000/samples?sample_status=collected&sample_type=blood" \
          -H "Authorization: Bearer $TOKEN"
 ```
 
-### 5. Update a Sample
+### Update a Sample
 
 ```bash
     curl -X PUT "http://localhost:8000/samples/S123" \
@@ -210,7 +218,7 @@ The response will include an `access_token` field. Use this token in the `Author
          -d '{"status": "archived"}'
 ```
 
-### 6. Delete a Sample
+### Delete a Sample
 
 ```bash
     curl -X DELETE "http://localhost:8000/samples/S123" \
