@@ -60,6 +60,9 @@ We need to initialize the database before running the Docker container. You can 
     alembic upgrade head
 ```
 
+> [!IMPORTANT]  
+> The user running the Docker container must have permissions to access the Docker daemon.
+
 Then, you can build and run the Docker container:
 
 ```bash
