@@ -19,8 +19,8 @@ class SampleRead(SampleCreate):
         from_attributes = True
 
 class SampleUpdate(BaseModel):
-    sample_type: Optional[SampleType]
-    subject_id: Optional[str]
-    collection_date: Optional[date]
-    status: Optional[StatusType]
-    storage_location: Optional[str]
+    sample_type: Optional[SampleType] = None
+    subject_id: Optional[str] = None
+    collection_date: Optional[date] = None
+    status: Optional[StatusType] = None
+    storage_location: Optional[str] = None
