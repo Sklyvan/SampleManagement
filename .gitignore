@@ -127,3 +127,4 @@ cython_debug/
 instance/*
 !instance/.gitignore
 .idea
+*.db
