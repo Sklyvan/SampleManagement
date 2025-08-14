@@ -43,6 +43,7 @@ ACCESS_TOKEN_EXPIRE_MINUTES=30
     alembic upgrade head
 ```
 For more details regarding the Database schema and creation, refer to the [alembic/README.md](alembic/README.md) file.
+
 6. **Run the Application**
 
 ```bash
